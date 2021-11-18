@@ -3,6 +3,8 @@ package RpgProject;
 import java.util.Scanner;
 
 public class Orc extends Personagem {
+	
+	Scanner ler = new Scanner(System.in);
 
 		private int forca;
 	
@@ -46,7 +48,7 @@ public class Orc extends Personagem {
 		}
 		@Override
 		public int chamaAtaque() {
-			try (Scanner ler = new Scanner(System.in)) {
+			{
 				if (getBonusAtaque()>0) {
 					System.out.println("\nQual golpe você quer fazer?\n1-Grito Catarrento\n2- Soco de cima pra baixo");
 					int op = ler.nextInt();

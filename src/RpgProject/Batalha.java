@@ -5,6 +5,10 @@ public class Batalha {
 	private Personagem op2;
 	private Personagem vencendor;
 	
+	Batalha (){
+		
+	}
+	
 	public void apresentar() {
 		System.out.println("\n ---- Batalha -----\n"+ op1.getNome()+" vs "+op2.getNome());
 	}
@@ -16,12 +20,9 @@ public class Batalha {
 		  s=op2;
 		}
 		else {
-		p=op2;
-		s=op1;
+		p=op1;
+		s=op2;
 		}
-		
-		
-		
 		
 		do {
 			
@@ -50,7 +51,9 @@ public class Batalha {
 			}
 		
 
-		}while (true);		
+		}while (true);	
+		
+		
 	}
 	public Personagem getOp1() {
 		return op1;
