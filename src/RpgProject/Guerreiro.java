@@ -1,5 +1,7 @@
 package RpgProject;
 
+import java.util.Scanner;
+
 public class Guerreiro extends Personagem{
 	private int forca;
 	
@@ -12,40 +14,69 @@ public class Guerreiro extends Personagem{
 	
 	}
 	
-	@Override
-	public void receberDano(int quantidade) {
-		if ((getVida()-quantidade)<=0) {
-			setVida(0);
-		}
-		else {
-			setVida(getVida()-quantidade);
-		}
-		System.out.println("\n"+getNome()+" está com "+getVida()+" de vida");
-	} 
+
+
 	
 	@Override
-	public int atacar() {
+	public int ataqueBasico() {
 		Dado dado= new Dado();
 		int valorAtaque=getForca()+dado.jogarDado(3);
-		System.out.println("\n"+getNome()+" deu um dano de "+valorAtaque);
+		System.out.println("\n"+getNome()+" deu um dano de "+valorAtaque+"!");
 		return valorAtaque;
 	}
-	
+	@Override
+	public int ataqueFatal() {
+		Dado dado= new Dado();
+		int valorAtaque=getForca()+dado.jogarDado(3)+jogarDado(3)*jogarDado(3);
+		System.out.println("\n"+getNome()+" deu um dano de "+valorAtaque+"!");
+		return valorAtaque;
+	}
+	@Override
+	public int chamaAtaque() {
+		try (Scanner ler = new Scanner(System.in)) {
+			if (getBonusAtaque()>0) {
+				System.out.println("\nQual golpe você quer fazer?\n1-Socão\n2-Martelo (capoeira)");
+				int op = ler.nextInt();
+				ler.nextLine();
+				switch(op) {
+				case 1: {
+					return ataqueBasico();
+				}
+				case 2: {
+					setBonusAtaque(getBonusAtaque()-1);
+					return ataqueFatal();
+				}
+				default: {
+					return 0;
+				}
+				}
+			}
+			else {
+				System.out.println("\nQual golpe você quer fazer?\n1-Socão");
+				int op = ler.nextInt();
+				ler.nextLine();
+				switch(op) {
+				case 1: {
+					return ataqueBasico();
+				}
+				default:{
+					return 0;
+				}
+				}
+			}
+		}
+		
+	}
 	
 	
 	@Override
-	public boolean defesa(int quant) {
-		if (quant>=getArmadura()) {
-			System.out.println("\nacertou o ataque!!");
-			return true;
-		}
-		else {
-			System.out.println("\nnão acertou o ataque!!");
-			return false;
-			
-		}
-	
+	public void imprimirInfo(){
+		System.out.println("\n Personagem: "+ getNome()+"\n"+"Classe: "+ getClasse()+
+				"\nNível:"+getNivel()+"\nPontos de Vida: "+getVida()+"\nArmadura: "+getArmadura()+"\nPontos de Experiência: "+getXp()
+				+"\nForça: "+getForca()+"\nBônus de Golpe especial: "+getBonusAtaque());
 	}
+	
+
 	
 	public void setForca(int forca) {
 		this.forca=forca;

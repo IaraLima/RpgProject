@@ -1,5 +1,7 @@
 package RpgProject;
 
+import java.util.Scanner;
+
 public class Orc extends Personagem {
 
 		private int forca;
@@ -11,6 +13,15 @@ public class Orc extends Personagem {
 			setForca(5);
 		
 		}
+		public Orc(String nome, int xp, int vida, int armadura,int forca) {
+			setNome("Orc "+nome);
+			setVida(vida);
+			setArmadura(armadura);
+			setForca(forca);
+		
+		}
+		
+		
 		public Orc() {
 			setNome("Orc");
 			setVida(15);
@@ -19,39 +30,64 @@ public class Orc extends Personagem {
 		
 		}
 		
-		
 		@Override
-		public void receberDano(int quantidade) {
-			if ((getVida()-quantidade)<=0) {
-				setVida(0);
-			}
-			else {
-				setVida(getVida()-quantidade);
-			}
-			System.out.println("\n"+getNome()+" está com "+getVida()+" de vida");
-		} 
-		
-		
-		@Override
-		public int atacar() {
-			int valorAtaque=getForca()+(int)(Math.random() * 3);
-			System.out.println("\n"+getNome()+" deu um dano de "+valorAtaque);
+		public int ataqueBasico() {
+			Dado dado= new Dado();
+			int valorAtaque=getForca()+dado.jogarDado(3)*2;
+			System.out.println("\n"+getNome()+" deu um dano de "+valorAtaque+"!");
 			return valorAtaque;
 		}
+		@Override
+		public int ataqueFatal() {
+			Dado dado= new Dado();
+			int valorAtaque=getForca()+dado.jogarDado(3)+jogarDado(3)*jogarDado(3);
+			System.out.println("\n"+getNome()+" deu um dano de "+valorAtaque+"!");
+			return valorAtaque;
+		}
+		@Override
+		public int chamaAtaque() {
+			try (Scanner ler = new Scanner(System.in)) {
+				if (getBonusAtaque()>0) {
+					System.out.println("\nQual golpe você quer fazer?\n1-Grito Catarrento\n2- Soco de cima pra baixo");
+					int op = ler.nextInt();
+					switch(op) {
+					case 1: {
+						ataqueBasico();
+					}
+					case 2: {
+						ataqueFatal();
+						setBonusAtaque(getBonusAtaque()-1);
+					}
+					default: {
+						return 0;
+					}
+					}
+				}
+				else {
+					System.out.println("\nQual golpe você quer fazer?\n1- Grito Catarrento)");
+					int op = ler.nextInt();
+					
+					switch(op) {
+					case 1: {
+						return ataqueBasico();
+					}
+					default:{
+						return 0;
+					}
+					}
+				}
+			}
+			
+		}
+		
 		
 		@Override
-		public boolean defesa(int quant) {
-			if (quant>=getArmadura()) {
-				System.out.println("\nacertou o ataque!!");
-				return true;
-			}
-			else {
-				System.out.println("\nnão acertou o ataque!!");
-				return false;
-				
-			}
-		
+		public void imprimirInfo(){
+			System.out.println("\n Personagem: "+ getNome()+"\n"+"Classe: "+ getClasse()+
+					"\nNível:"+getNivel()+"\nPontos de Vida: "+getVida()+"\nArmadura: "+getArmadura()+"\nPontos de Experiência: "+getXp()
+					+"\nForça: "+getForca()+"\nBônus de Golpe especial: "+getBonusAtaque());
 		}
+		
 		
 		public void setForca(int forca) {
 			this.forca=forca;
