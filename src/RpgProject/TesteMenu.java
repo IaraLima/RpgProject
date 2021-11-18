@@ -21,37 +21,13 @@ public class TesteMenu {
 					String nome;
 					System.out.println("\nNome do personagem: ");
 					nome = ler.next();
+					ler.nextLine();
 					Guerreiro guerreiro = new Guerreiro(nome);
 					Orc orc = new Orc();
 					System.out.println("\nVocê acaba de se deparar com o orc, que te acaba por te encurralar junto a parede.\nEle é bem maior que você, seus músculos enormes suados cheiram como um cadáver em estado de putrefação."
 							+ "\nEle segura um machado de duas mãos. O orc diz algumas palavras em sua língua nativa, \nporem você as interpreta como VOCÊ MORRE AQUI!\n");
 					
-					do {
-						
-						if (guerreiro.getVida()>0) {
-						System.out.println("\n"+guerreiro.getNome()+" tentativa de ataque:");
-						
-						if (orc.defesa(guerreiro.jogarDado(20),guerreiro.getNome())) {
-							orc.receberDano(guerreiro.chamaAtaque());
-						}
-						}
-						else {
-							System.out.println("\n"+guerreiro.getNome()+" morreu! \n GAME OVER");
-							break;
-						}
-						if (orc.getVida()>0) {
-							System.out.println("\n"+orc.getNome()+" tentativa de ataque:");
-							if (guerreiro.defesa(orc.jogarDado(20),orc.getNome())) {
-								guerreiro.receberDano(orc.ataqueAleatorio());	
-							}
-						}
-						else {
-							System.out.println("\n"+guerreiro.getNome()+" derrotou o Orc! Parabéns !!");
-							break;
-						}
-						
-
-					}while (true);
+					
 					
 				}
 				

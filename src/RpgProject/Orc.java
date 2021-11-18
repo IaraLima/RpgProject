@@ -11,8 +11,8 @@ public class Orc extends Personagem {
 			setVida(15);
 			setArmadura(7);
 			setForca(5);
-		
 		}
+		
 		public Orc(String nome, int xp, int vida, int armadura,int forca) {
 			setNome("Orc "+nome);
 			setVida(vida);
@@ -33,7 +33,7 @@ public class Orc extends Personagem {
 		@Override
 		public int ataqueBasico() {
 			Dado dado= new Dado();
-			int valorAtaque=getForca()+dado.jogarDado(3)*2;
+			int valorAtaque=getForca()+dado.jogarDado(3);
 			System.out.println("\n"+getNome()+" deu um dano de "+valorAtaque+"!");
 			return valorAtaque;
 		}

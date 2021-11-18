@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Guerreiro extends Personagem{
 	private int forca;
-	
+	Scanner ler = new Scanner(System.in);
 	
 	public Guerreiro(String nome) {
 		setNome(nome);
@@ -33,7 +33,7 @@ public class Guerreiro extends Personagem{
 	}
 	@Override
 	public int chamaAtaque() {
-		try (Scanner ler = new Scanner(System.in)) {
+		
 			if (getBonusAtaque()>0) {
 				System.out.println("\nQual golpe você quer fazer?\n1-Socão\n2-Martelo (capoeira)");
 				int op = ler.nextInt();
@@ -53,6 +53,7 @@ public class Guerreiro extends Personagem{
 			}
 			else {
 				System.out.println("\nQual golpe você quer fazer?\n1-Socão");
+				
 				int op = ler.nextInt();
 				ler.nextLine();
 				switch(op) {
@@ -64,7 +65,7 @@ public class Guerreiro extends Personagem{
 				}
 				}
 			}
-		}
+		
 		
 	}
 	

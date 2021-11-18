@@ -36,8 +36,10 @@ public abstract class Personagem {
 		try (Scanner ler = new Scanner(System.in)) {
 			System.out.println("\nEntre com o nome do personagem: ");
 			setNome(ler.next());
+			ler.nextLine();
 			System.out.println("\n… um personagme n„o controlado pelo jogador (npc)?\n1-Sim\nN„o ");
 			int npc = ler.nextInt();
+			ler.nextLine();
 			if (npc==1) {
 				setNpc(true);
 			}
