@@ -71,7 +71,7 @@ public class Goblin extends Personagem {
 					}
 				}
 				else {
-					System.out.println("\nQual golpe você quer fazer?\n1- Apunhalada fraca)");
+					System.out.println("\nQual golpe você quer fazer?\n\n1- Apunhalada fraca)");
 					int op = ler.nextInt();
 					
 					switch(op) {

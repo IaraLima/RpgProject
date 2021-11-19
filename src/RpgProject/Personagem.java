@@ -84,10 +84,14 @@ public abstract class Personagem {
 	public boolean defesa(int quant, String atacante) {
 		if (quant>=getArmadura()) {
 			System.out.println("\n"+atacante+" acertou o ataque!!");
+		
+			System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
+			
 			return true;
 		}
 		else {
 			System.out.println("\n"+atacante+" não acertou o ataque!!");
+			System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
 			return false;
 			
 		}

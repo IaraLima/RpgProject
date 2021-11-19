@@ -57,7 +57,7 @@ public class Guerreiro extends Personagem{
 				}
 			}
 			else {
-				System.out.println("\nQual golpe você quer fazer?\n1-Socão");
+				System.out.println("\nQual golpe você quer fazer?\n\n1-Socão");
 				
 				int op = ler.nextInt();
 				ler.nextLine();

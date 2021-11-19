@@ -71,7 +71,7 @@ public class Orc extends Personagem {
 					}
 				}
 				else {
-					System.out.println("\nQual golpe você quer fazer?\n1- Grito Catarrento)");
+					System.out.println("\nQual golpe você quer fazer?\n\n1- Grito Catarrento)");
 					int op = ler.nextInt();
 					
 					switch(op) {

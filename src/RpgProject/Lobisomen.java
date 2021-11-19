@@ -72,7 +72,7 @@ public class Lobisomen extends Personagem {
 					}
 				}
 				else {
-					System.out.println("\nQual golpe você quer fazer?\n1- Garra mortifera)");
+					System.out.println("\nQual golpe você quer fazer?\n\n1- Garra mortifera)");
 					int op = ler.nextInt();
 					
 					switch(op) {

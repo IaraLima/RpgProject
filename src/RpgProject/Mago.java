@@ -65,7 +65,7 @@ public class Mago extends Personagem{
 				}
 			}
 			else {
-				System.out.println("\nQual golpe você quer fazer?\n1- Misseis Mágicos");
+				System.out.println("\nQual golpe você quer fazer?\n\n1- Misseis Mágicos");
 				int op = ler.nextInt();
 				
 				switch(op) {

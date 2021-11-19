@@ -3,7 +3,8 @@ package RpgProject;
 public class Historia {
 	
 	public void prologo(Personagem p) {
-		System.out.println("Seus olhos se abrem aos poucos e a luz do sol os machuca violentamente. Você tenta abri-los novamente, mais\n"
+		System.out.println("\t\t\t\t\t\t\tPROLOGO\n\n\n");
+		System.out.println("\nSeus olhos se abrem aos poucos e a luz do sol os machuca violentamente. Você tenta abri-los novamente, mais\n"
                 + " devagar, e aos poucos sua visão vai se recobrando. Quando você finalmente se sente capaz de enxergar, seu coração dispara\n"
                 + " e você recupera seu fôlego como se tivesse acabado de ser estrangulado por duas mãos feitas de granito maciço. Bastante afoito,\n"
                 + " você olha ao se redor e se vê numa praia deserta. Seu corpo está molhado e você sente a areia que está dentro de suas roupas arranhar\n"
@@ -16,6 +17,7 @@ public class Historia {
 	
 	
 	public void parte1() {
+		System.out.println("\t\t\t\t\t\t\tCAPITULO 1\n\n\n");
 		System.out.println("\nVoce se encontra em drinanor uma cidade elfica\n"
                 + "cujas florestas gigantes se expandem por toda a cidade \n"
                 + "seguindo seu caminho voce passa por uma área com muitos \n"
@@ -32,6 +34,7 @@ public class Historia {
 		}
 	}
 	public void parte2() {
+		System.out.println("\t\t\t\t\t\t\tCAPITULO 2\n\n\n");
 		System.out.println("\n2 semanas se passaram desde sua batalha contra o globin e agora\n"
                 + "voce se encontra em Harom uma cidade de anões e então um barulho\n"
                 + "te chama atenção ao fundo de um enorme pantano ao deparar com o orc,\n"
@@ -47,11 +50,12 @@ public class Historia {
     	if (sitacao) {
     		System.out.println("\n Parabens pela vitoria "+jogador.getNome()+" ele nem era tudo isso, não é mesmo ?");
 		}else {
-			 System.out.println("\n E a primeira vez que voce batalha"+ jogador.getNome()+" Não ? tem certeza ?");
+			 System.out.println("\n E a primeira vez que voce batalha "+ jogador.getNome()+" Não ? tem certeza ?");
 		}
 	}
     
 	public void parte3() {
+		System.out.println("\t\t\t\t\t\t\tCAPITULO 3\n\n\n");
 		System.out.println("\nÉ uma noite de lua cheia, você acabou de chegar na cidade de Draudaty.\n"
                 + " Percebe que as ruas estão vazias e não entende o pq. Você continua a andar, quando\n"
                 + " de repente escuta um uivo vindo de longe. Você se prepara para o pior e fica em alerta.\n"
@@ -66,6 +70,7 @@ public class Historia {
 		}
 	}
 	public void parte4(Personagem dragao) {
+		System.out.println("\t\t\t\t\t\t\tCAPITULO FINAL\n\n\n");
 		System.out.println("\nVocê está caminhando com destino à Ulgaheaa, uma cidade de anões abandonada,\n"
                 + " para encontrar a espada de Agboisar. O caminho é longo e começou a chover e você procura\n"
                 + " abrigo em uma caverna escura. Ao adentra-la um pouco mais para se aquecer, você avista algo\n"

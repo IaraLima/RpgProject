@@ -14,11 +14,12 @@ public class TesteMenu {
 
 		while (escolha != 0) {
 			
-			System.out.println("\n------------------- Eclipse, a Jornada do Herói ------------------");
+			System.out.println("\n------------------------------------------------------ECLIPSE E A JORNADA DO HEROI---------------------------------------------------------------------------");
 			System.out.println("\n0-Sair");
 			System.out.println("\n1-Iniciar");
 			escolha = ler.nextInt();
 			ler.nextLine();
+			System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
 			
 
 			if (escolha == 1) {
@@ -31,6 +32,9 @@ public class TesteMenu {
 				System.out.println("\nEscolha sua classe: (1-Mago ou 2-Guerreiro)");
 				int classe = ler.nextInt();
 				ler.nextLine();
+				System.out.println("\n\n");
+				System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
+				System.out.println("\n\n");
 
 				// do {
 				if (classe==1) {
@@ -60,18 +64,27 @@ public class TesteMenu {
 				Batalha batalha = new Batalha();
 				batalha.setOp1(p);
 				batalha.setOp2(inimigos.get(0));
-
+				System.out.println("\n\n");
+				System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
+				System.out.println("\n\n");
+				System.out.println("\t\t\t\t\t\t\tINFORMAÇÕES DO PERSONAGEM\n\n\n");
 				// Parte 1, batalha contra o goblin
 				p.imprimirInfo();
+				System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
 				inimigos.get(0);
 				hist.parte1();
+				System.out.println("\n\n");
+				System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
+				System.out.println("\n\n");
 				batalha.comecarBatalha();
 				if (batalha.getVencendor() == p) {
 					hist.resultadoParte1(true, p);
 					p.restaurarVida();
 					p.setXp(p.getXp() + inimigos.get(0).getXp());
 					p.atualizarNivel();
-					System.out.println("\n------------------------------------------------------------------------------------");
+					System.out.println("\n\n");
+					System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
+					System.out.println("\n\n");
 				} else {
 					hist.resultadoParte1(false, p);
 					break;
@@ -79,8 +92,12 @@ public class TesteMenu {
 				}
 				// Parte 2, batalha contra o orc
 				p.imprimirInfo();
+				System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
 				inimigos.get(1);
 				hist.parte2();
+				System.out.println("\n\n");
+				System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
+				System.out.println("\n\n");
 				batalha.setOp2(inimigos.get(1));
 				batalha.comecarBatalha();
 				if (batalha.getVencendor() == p) {
@@ -88,7 +105,9 @@ public class TesteMenu {
 					p.restaurarVida();
 					p.setXp(p.getXp() + inimigos.get(0).getXp());
 					p.atualizarNivel();
-					System.out.println("\n------------------------------------------------------------------------------------");
+					System.out.println("\n\n");
+					System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
+					System.out.println("\n\n");
 					
 
 				} else {
@@ -97,8 +116,12 @@ public class TesteMenu {
 				}
 				// Parte 3, batalha contra o lobisomen
 				p.imprimirInfo();
+				System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
 				inimigos.get(2);
 				hist.parte3();
+				System.out.println("\n\n");
+				System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
+				System.out.println("\n\n");
 				batalha.setOp2(inimigos.get(2));
 				batalha.comecarBatalha();
 				if (batalha.getVencendor() == p) {
@@ -106,7 +129,9 @@ public class TesteMenu {
 					p.restaurarVida();
 					p.setXp(p.getXp() + inimigos.get(0).getXp());
 					p.atualizarNivel();
-					System.out.println("\n------------------------------------------------------------------------------------");
+					System.out.println("\n\n");
+					System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
+					System.out.println("\n\n");
 					
 				} else {
 					hist.resultadoParte3(false);
@@ -114,8 +139,12 @@ public class TesteMenu {
 				}
 				// Parte 4, batalha contra dragão
 				p.imprimirInfo();
+				System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
 				inimigos.get(3);
 				hist.parte4(inimigos.get(3));
+				System.out.println("\n\n");
+				System.out.println("\n---------------------------------------------------------------------------------------------------------------------------------");
+				System.out.println("\n\n");
 				batalha.setOp2(inimigos.get(3));
 				batalha.comecarBatalha();
 				if (batalha.getVencendor() == p) {
