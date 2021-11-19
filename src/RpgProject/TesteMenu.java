@@ -14,7 +14,7 @@ public class TesteMenu {
 
 		while (escolha != 0) {
 			
-			System.out.println("\n------------------- Sem Nome ------------------");
+			System.out.println("\n------------------- Eclipse, a Jornada do Herói ------------------");
 			System.out.println("\n0-Sair");
 			System.out.println("\n1-Iniciar");
 			escolha = ler.nextInt();

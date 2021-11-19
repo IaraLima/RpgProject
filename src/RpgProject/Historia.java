@@ -72,7 +72,7 @@ public class Historia {
                 + " brilhante que vem em sua direção. De repente, um grito ensurdecedor e brutal ecoa vertiginosamente\n"
                 + " pelas paredes da caverna. Você se vê tão atordoado que caí no chão e começa a vomitar. Mal consegue \n"
                 + "levantar direito e percebe que bem na sua frente se encontram dentes enormes e afiados, que aparentam "
-            + "estar prontos para te devorar. \n Você se dá conta então de que terá de lutar contra um terrível/n"
+            + "estar prontos para te devorar. \n Você se dá conta então de que terá de lutar contra um terrível\n"
             +  dragao.getNome()+" Seu corpo gela por inteiro e você se prepara como pode para lutar pela sua vida!\n");
 	}
     public void resultadoParte4(boolean sitacao, Personagem dragao){
