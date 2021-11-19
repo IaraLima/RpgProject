@@ -6,11 +6,19 @@ private int forca;
 
 	public Dragao () {
 		Dado dado=new Dado();
+		setClasse("Dragão");
+		setXp(1000);
+		
+		
 		int op=dado.jogarDado(5);
 		switch (op) {
 		case 1:
 			setNome("Dragão de Fogo");
 			setVida(15);
+			setNpc(true);
+			setVidaMax(15);
+			setBonusAtaque(0);
+			setNivel(1);
 			setArmadura(6);
 			this.arma = new Magia("Bola de Fogo",8,10);	
 			 break;
@@ -18,25 +26,41 @@ private int forca;
 		case 2:
 			setNome("Dragão de Água");
 			setVida(20);
+			setNpc(true);
+			setVidaMax(15);
+			setBonusAtaque(0);
+			setNivel(1);
 			setArmadura(6);
 			setForca(4);
+			this.arma = new Magia("Sopro Gelado",1,3);	
 			break;
 			
 		case 3:
 			setNome("Dragão de Terra");
 			setVida(15);
+			setVidaMax(15);
 			setArmadura(8);
+			setNpc(true);
+			setBonusAtaque(0);
+			setNivel(1);
 			setForca(4);
+			this.arma = new Magia("Terremoto",2,5);	
 			break;
 		case 4:
 			setNome("Dragão de Ar");
 			setVida(15);
+			setNpc(true);
+			setVidaMax(15);
+			setBonusAtaque(0);
+			setNivel(1);
 			setArmadura(6);
 			setForca(7);
+			this.arma = new Magia("Tornado",3,7);	
+			
 			break;
 		}
 	}
-	
+
 	public int getForca() {
 		return forca;
 	}

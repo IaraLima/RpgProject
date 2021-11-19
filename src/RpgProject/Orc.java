@@ -27,6 +27,11 @@ public class Orc extends Personagem {
 		public Orc() {
 			setNome("Orc");
 			setVida(15);
+			setNpc(true);
+			setVidaMax(15);
+			setBonusAtaque(0);
+			setNivel(1);
+			setXp(200);
 			setArmadura(7);
 			setForca(5);
 		

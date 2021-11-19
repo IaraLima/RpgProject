@@ -10,9 +10,15 @@ public class Lobisomen extends Personagem {
 	
 		public Lobisomen(String nome) {
 			setNome(nome);
-			setVida(15);
-			setArmadura(7);
+			setVida(20);
+			setVidaMax(20);
+			setArmadura(10);
 			setForca(5);
+			setXp(300);
+			setNpc(true);
+			setClasse("Lobisomem");
+			setBonusAtaque(0);
+			setNivel(1);
 		}
 		
 		public Lobisomen(String nome, int xp, int vida, int armadura,int forca) {

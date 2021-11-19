@@ -10,7 +10,7 @@ public class Batalha {
 	}
 	
 	public void apresentar() {
-		System.out.println("\n ---- Batalha -----\n"+ op1.getNome()+" vs "+op2.getNome());
+		System.out.println("\n ------------------------ Batalha -------------------\n"+ op1.getNome()+" vs "+op2.getNome());
 	}
 	public void comecarBatalha() {
 		Personagem p,s;
@@ -39,13 +39,13 @@ public class Batalha {
 				break;
 			}
 			if (s.getVida()>0) {
-				System.out.println("\n"+s.getNome()+" tentativa de ataque:");
+				System.out.println("\n"+s.getNome()+" tentativa de ataque:\n");
 				if (p.defesa(s.jogarDado(20),s.getNome())) {
 					p.receberDano(s.ataqueAleatorio());	
 				}
 			}
 			else {
-				System.out.println("\n"+p.getNome()+" derrotou o Orc! Parabéns !!");
+				System.out.println("\n"+p.getNome()+" derrotou o "+op2.getNome()+"! Parabéns !!");
 				setVencendor(p);
 				break;
 			}

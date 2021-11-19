@@ -4,8 +4,17 @@ import java.util.Scanner;
 
 public class Mago extends Personagem{
 	private Magia arma;
-	
-	public Mago () {
+	Scanner ler = new Scanner(System.in);
+	public Mago (String nome) {
+		setNome(nome);
+		setVida(50);
+		setClasse("Mago");
+		setNpc(false);
+		setVidaMax(50);
+		setBonusAtaque(0);
+		setNivel(1);
+		setXp(0);
+		setArmadura(8);
 		this.arma=new Magia("Fogo",8,10);
 	}
 
@@ -30,7 +39,7 @@ public class Mago extends Personagem{
 	}
 	@Override
 	public void imprimirInfo() {
-		System.out.println("\n Personagem: "+ getNome()+"\n"+"Classe: "+ getClasse()+
+		System.out.println("\nPersonagem: "+ getNome()+"\n"+"Classe: "+ getClasse()+
 				"\nNível:"+getNivel()+"\nPontos de Vida: "+getVida()+"\nArmadura: "+getArmadura()+"\nPontos de Experiência: "+getXp()
 				+"\nMagia: "+getArma().getTipoArma()+"\nBônus de Golpe especial: "+getBonusAtaque());
 	}
@@ -38,9 +47,9 @@ public class Mago extends Personagem{
 	@Override
 	
 	public int chamaAtaque() {
-		try (Scanner ler = new Scanner(System.in)) {
+	
 			if (getBonusAtaque()>0) {
-				System.out.println("\nQual golpe você quer fazer?\n1-Grito Catarrento\n2- Soco de cima pra baixo");
+				System.out.println("\nQual golpe você quer fazer?\n1-Misseis Mágicos\n2- Bola de fogo");
 				int op = ler.nextInt();
 				switch(op) {
 				case 1: {
@@ -56,7 +65,7 @@ public class Mago extends Personagem{
 				}
 			}
 			else {
-				System.out.println("\nQual golpe você quer fazer?\n1- Grito Catarrento)");
+				System.out.println("\nQual golpe você quer fazer?\n1- Misseis Mágicos");
 				int op = ler.nextInt();
 				
 				switch(op) {
@@ -70,7 +79,7 @@ public class Mago extends Personagem{
 			}
 		}
 		
-	}
+	
 	
 	public void setArma(String x, int y, int z) {
 		this.arma = new Magia(x,y,z);

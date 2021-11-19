@@ -26,9 +26,14 @@ public class Goblin extends Personagem {
 		
 		public Goblin() {
 			setNome("Goblin");
-			setVida(15);
+			setClasse("Goblin");
+			setVida(10);
+			setVidaMax(10);
+			setBonusAtaque(0);
+			setNivel(1);
+			setXp(100);
 			setArmadura(7);
-			setForca(5);
+			setForca(2);
 		
 		}
 		

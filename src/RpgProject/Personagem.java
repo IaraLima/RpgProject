@@ -6,6 +6,7 @@ public abstract class Personagem {
 
 	
 	private int vida;
+	private int vidaMax;
 	private String nome;
 	private String classe;
 	private int armadura;
@@ -22,6 +23,10 @@ public abstract class Personagem {
 	public abstract int chamaAtaque();
 	
 	
+	public void restaurarVida() {
+		setVida(getVidaMax());
+	}
+	
 	
 	public int ataqueAleatorio() {
 		int op = jogarDado(4);
@@ -31,13 +36,14 @@ public abstract class Personagem {
 			return ataqueBasico();
 		}
 	}
+
 	
 	public void lerPersonagem(){
 		try (Scanner ler = new Scanner(System.in)) {
 			System.out.println("\nEntre com o nome do personagem: ");
 			setNome(ler.next());
 			ler.nextLine();
-			System.out.println("\nÉ um personagme não controlado pelo jogador (npc)?\n1-Sim\nNão ");
+			System.out.println("\nÉ um personagem não controlado pelo jogador (npc)?\n1-Sim\nNão ");
 			int npc = ler.nextInt();
 			ler.nextLine();
 			if (npc==1) {
@@ -90,19 +96,35 @@ public abstract class Personagem {
 	
 	//O nível do personagem será determinado pelos pontos de experiência que ele receber nas batalhas 
 	public void atualizarNivel() {
-		if (getXp()>100 && getXp()<200) {
+		if (getXp()>=100 && getXp()<200) {
 			setNivel(1);
 		}
-		else if (getXp()>200 && getXp()<300) {
+		else if (getXp()>=200 && getXp()<300) {
+			setVidaMax(getVidaMax()+5+jogarDado(3));
+			setVida(getVidaMax());
+			setArmadura(getArmadura()+2);
+			setBonusAtaque(getBonusAtaque()+1);
 			setNivel(2);
 		}
-		else if (getXp()>300 && getXp()<400) {
+		else if (getXp()>=300 && getXp()<400) {
+			setVidaMax(getVidaMax()+5+jogarDado(3));
+			setVida(getVidaMax());
+			setArmadura(getArmadura()+2);
+			setBonusAtaque(getBonusAtaque()+1);
 			setNivel(3);
 		}
-		else if (getXp()>400 && getXp()<500) {
+		else if (getXp()>=400 && getXp()<500) {
+			setVidaMax(getVidaMax()+5+jogarDado(3));
+			setVida(getVidaMax());
+			setArmadura(getArmadura()+2);
+			setBonusAtaque(getBonusAtaque()+1);
 			setNivel(4);
 		}
-		else if (getXp()>500) {
+		else if (getXp()>=500) {
+			setVidaMax(getVidaMax()+5+jogarDado(3));
+			setVida(getVidaMax());
+			setArmadura(getArmadura()+2);
+			setBonusAtaque(getBonusAtaque()+1);
 			setNivel(5);
 		}
 		else {
@@ -164,6 +186,12 @@ public abstract class Personagem {
 	}
 	public void setNpc(boolean npc) {
 		this.npc = npc;
+	}
+	public int getVidaMax() {
+		return vidaMax;
+	}
+	public void setVidaMax(int vidaMax) {
+		this.vidaMax = vidaMax;
 	}
 	
 

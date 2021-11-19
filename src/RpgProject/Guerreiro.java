@@ -8,10 +8,15 @@ public class Guerreiro extends Personagem{
 	
 	public Guerreiro(String nome) {
 		setNome(nome);
-		setVida(10);
+		setClasse("Guerreiro");
+		setVida(50);
+		setXp(0);
+		setVidaMax(50);
+		setNpc(false);
 		setArmadura(10);
 		setForca(3);
-	
+		setBonusAtaque(0);
+		setNivel(1);
 	}
 	
 
@@ -72,7 +77,7 @@ public class Guerreiro extends Personagem{
 	
 	@Override
 	public void imprimirInfo(){
-		System.out.println("\n Personagem: "+ getNome()+"\n"+"Classe: "+ getClasse()+
+		System.out.println("\nPersonagem: "+ getNome()+"\n"+"Classe: "+ getClasse()+
 				"\nNível:"+getNivel()+"\nPontos de Vida: "+getVida()+"\nArmadura: "+getArmadura()+"\nPontos de Experiência: "+getXp()
 				+"\nForça: "+getForca()+"\nBônus de Golpe especial: "+getBonusAtaque());
 	}
